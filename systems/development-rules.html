@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Development Rules</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        li,
+        ol {
+            font-weight: 700;
+            font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 6rem;
+        }
+
+        p {
+            font-weight: initial;
+            line-height: 1.4;
+        }
+
+        h2 {
+            color: rgb(0, 122, 156);
+            line-height: 1.4;
+        }
+
+        h3 {
+            color: rgb(211, 56, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center; color: rgb(255, 62, 62);">Development Rules</h1>
+    <p style="text-align: center;"><i>Documented on 03/04/2026 by Harsha.</i></p>
+    <div style="margin: 1rem;display: flex;gap: 1rem;">
+        <a href="#html">HTML Development Rules</a>
+        <a href="#css">CSS Development Rules</a>
+    </div>
+    <ul>
+        <li>
+            <h2>Why you need to follow the Development Rules?</h2>
+            <p>These Rules align you in StarterWave to <b>Follow the Same Code Standards</b>.</p>
+            <p>They produce <b>Readable Code</b>. So anyone in StarterWave can Understand your Code easily because the
+                code looks like they had wrote it.</p>
+            <p>And also <b>Debugging of the Code becomes Easier</b>.</p>
+        </li>
+        <li id="html">
+            <h2>HTML Development Rules:</h2>
+            <div>
+                <h3>1. Element Structure in Instruction Docs:</h3>
+                <p>In the Task Instruction Docs, the HTML Structure of the Page is Written by following Structure:
+                <p>This Structure helps you to Understand How to <b>Arrange</b> and <b>Name</b> the Elements in HTML
+                    Code.</p>
+                <p>( div <b>></b> h3 ) means, h3 Element is a <b>Direct Child</b> to div Element i.e h3 is Placed inside
+                    div.</p>
+                <p>( h3 <b>+</b> div ) means, div Element is a <b>Direct Sibling</b> to h3 Element i.e div is Placed
+                    next to
+                    h3.
+                </p>
+                <p>h3(.product-title) means, h3 with <b>Class Attribute</b> Value as product-title.</p>
+                <p>h3[Product Title] means, h3 should <b>have the Content inside as</b> Product Title.</p>
+                </p>
+                <p>Ex: body > header + main + footer</p>
+                <p>Ex: div(.resume-templates-container) > h2 + div (.resume-templates-grid)</p>
+            </div>
+            <div>
+                <h3>2. Every HTML Page must have Semantic Elements, the Page Structure Follows:</h3>
+                <p>header > nav > ul > li > a</p>
+                <p>main > section (Don't use nested section, use div instead)</p>
+                <p>footer > nav > ul > li > a</p>
+            </div>
+            <div>
+                <h3>3. To apply Styles to an Element, use Class Attributes to Select the Element in CSS.</h3>
+                <p>Using Class Attribute for naming an Element maintains Equal <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Specificity">Specificity</a>
+                    through out the CSS Code.
+                </p>
+                <p>It helps to Stop <b>Overriding</b> Unnecessary Styles of an Element.</p>
+            </div>
+            <div>
+                <h3>4. Write Purposeful Class names of an Element, Even if they are Long.</h3>
+                <p>If Class Names are Meaningful then we can <b>Easily Identify</b> the Styles of an Element in CSS
+                    File.</p>
+                <p>Class Names must be written in <b>kebab-case</b>.</p>
+                <p><b>Bad Class Names:</b> prods-cont, prod-card, abc, pc, inputField, table, btn, card-div.</p>
+                <p><b>Good Class Names:</b> products-container, product-card, input-field-item, product-title,
+                    product-price, orders-table, show-orders-btn.</p>
+            </div>
+            <div>
+                <h3>5. Every Webpage must have Only One H1 Heading Element.</h3>
+            </div>
+        </li>
+        <li id="css">
+            <h2>CSS Development Rules:</h2>
+            <div>
+                <h3>Always prefer to use Multiples of 8 Values for gap, padding, margin.</h3>
+                <p>Spacing will be Consistent, Looks Clean and Matches Industry Standards.</p>
+                <p>Ex: gap: 8px (Correct), gap:6px (Not Good).</p>
+                <p>Ex: gap: 2rem (Correct), gap: 1.7rem (Not Good)</p>
+            </div>
+            <div>
+                <h3>1. Select Every Element you use in CSS Code through Class Names Only except Single Unique Elements
+                    like body, header, footer, main, etc.</h3>
+            </div>
+            <div>
+                <h3>2. Select all Elements remove Default Behaviours</h3>
+                <p>Apply them margin & padding as 0.</p>
+                <p>Change its box-sizing property value to border-box. To Change the Width & Height Calculation
+                    Behaviour of Elements.</p>
+            </div>
+            <div>
+                <h3>3. Use Flexible Sizes Instead of Fixed Sizes</h3>
+                <p>Don’t use fixed sizes like px everywhere. Use flexible values like %, vw, or clamp().</p>
+                <p>Your design will adjust automatically on mobile, tablet, and desktop.</p>
+            </div>
+            <div>
+                <h3>4. Use Flexbox to Arrange Items in (Rows/Columns).</h3>
+                <p>It makes alignment and spacing very easy compared to other methods.</p>
+            </div>
+            <div>
+                <h3>5. Use Consistent Gap for Flex Container instead of Margin Between Flex Items.</h3>
+                <p>Easier and cleaner than adding margin to each element.</p>
+            </div>
+            <div>
+                <h3>6. Always Add Consistent Padding or Space Inside all Sections in the Webpage.</h3>
+                <p>Without space, everything looks crowded and messy.</p>
+            </div>
+            <div>
+                <h3>7. Stack Items on Small Screens</h3>
+                <p>Use media query to change Flex Container Layout to column on mobile.</p>
+                <p>Side-by-side layouts don’t fit on small screens.</p>
+            </div>
+            <div>
+                <h3>8. Allow Flex Items to Wrap automatically</h3>
+                <p>Use flex-wrap: wrap. Items will automatically move to next line on small screens.</p>
+            </div>
+            <div>
+                <h3>9. Make Text Size Flexible</h3>
+                <p>Use clamp() for font sizes. Text becomes readable on all devices without extra work.</p>
+            </div>
+            <div>
+                <h3>10. Keep Images Properly Sized</h3>
+                <p>Use width: 100% and object-fit: cover. Images won’t stretch or break layout.</p>
+            </div>
+        </li>
+    </ul>
+</body>
+
+</html>
